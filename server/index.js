@@ -1,9 +1,13 @@
 const express = require("express");
 const path = require("path");
+const morgan = require("morgan");
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
+
+// Logging tool
+app.use(morgan("dev"));
 
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, "../client/build")));
