@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar renders the UI as expected 1`] = `
+<div
+  className="navbar"
+>
+  <h1>
+    My Weather App
+  </h1>
+  <ul
+    className="colorful-border"
+  >
+    <li
+      className="colorful-border-red"
+    />
+    <li
+      className="colorful-border-orange"
+    />
+    <li
+      className="colorful-border-yellow"
+    />
+    <li
+      className="colorful-border-light-green"
+    />
+    <li
+      className="colorful-border-green"
+    />
+    <li
+      className="colorful-border-blue"
+    />
+    <li
+      className="colorful-border-violet"
+    />
+  </ul>
+</div>
+`;
