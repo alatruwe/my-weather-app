@@ -4,6 +4,7 @@ function NavBar() {
   return (
     <div className="navbar">
       <h1>My Weather App</h1>
+      {/* rainbow border */}
       <ul className="colorful-border">
         <li className="colorful-border-red"></li>
         <li className="colorful-border-orange"></li>
