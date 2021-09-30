@@ -1,6 +1,7 @@
 import { Component } from "react";
 import NavBar from "./components/NavBar/NavBar";
 import ZipcodeForm from "./components/ZipcodeForm/ZipcodeForm";
+import Weather from "./components/Weather/Weather";
 import "./App.css";
 
 class App extends Component {
@@ -16,7 +17,7 @@ class App extends Component {
   };
 
   renderWeather() {
-    return <p>Hi</p>;
+    return <Weather />;
   }
 
   render() {
