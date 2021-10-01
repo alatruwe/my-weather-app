@@ -68,24 +68,30 @@ class WeatherCard extends Component {
     const id = this.props.icon;
     const src = getIconSource.getSource(id);
     return (
-      <div onClick={this.showDetails}>
-        <img src={src} alt="weather icon" />
-        <p>{this.props.description}</p>
-        <div className="weatherDetails">
-          <div className="weatherDetailsIcon">
-            <i className="fas fa-thermometer-half"></i>
+      <div className="card" onClick={this.showDetails}>
+        <div className="vertical-border"></div>
+        <div className="cardDetails">
+          <div>
+            <img src={src} alt="weather icon" />
+            <h2>{this.props.description}</h2>
           </div>
-          <p>{this.props.temp} F</p>
-        </div>
-        <div className="weatherDetails">
-          <div className="weatherDetailsIcon">
-            <i className="fas fa-sun"></i>
+          <div className="weatherDetails">
+            <div className="weatherDetailsIcon">
+              <i className="fas fa-thermometer-half"></i>
+              <p>Temp</p>
+            </div>
+            <p>{this.props.temp} F</p>
+          </div>
+          <div className="weatherDetails">
+            <div className="weatherDetailsIcon">
+              <i className="fas fa-sun"></i>
+              <p>UV index</p>
+            </div>
             <p>UV index</p>
           </div>
-          <p>UV index</p>
-        </div>
 
-        <div>{this.state.showDetails ? this.renderDetails() : <></>}</div>
+          <div>{this.state.showDetails ? this.renderDetails() : <></>}</div>
+        </div>
       </div>
     );
   }

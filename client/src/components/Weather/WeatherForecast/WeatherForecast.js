@@ -8,7 +8,7 @@ class WeatherForecast extends Component {
   // pass down data as props to WeatherCard
   render() {
     return (
-      <div>
+      <div className="wrapperForecast">
         <ul className="weatherForecast">
           {data.list.slice(1).map((data, index) => (
             <li key={data.dt}>

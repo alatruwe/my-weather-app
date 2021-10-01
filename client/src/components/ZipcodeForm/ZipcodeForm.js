@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./ZipcodeForm.css";
 class ZipcodeForm extends Component {
   constructor(props) {
     super(props);
@@ -25,25 +25,28 @@ class ZipcodeForm extends Component {
 
   render() {
     return (
-      <div>
+      <section className="wrapperForm">
         <form
+          className="zipcodeForm"
           onSubmit={(e) => {
             this.handleSubmit(e);
           }}
         >
-          <label htmlFor="zipcode">
-            Enter a zipcode:
-            <input
-              type={"number"}
-              id={"zipcode"}
-              name={"zipcode"}
-              onChange={(e) => this.updateZipcode(e.target.value)}
-              value={this.state.zipcode}
-            ></input>
-          </label>
-          <button type="submit">Go</button>
+          <label htmlFor="zipcode">Enter a zipcode</label>{" "}
+          <input
+            type={"number"}
+            id={"zipcode"}
+            name={"zipcode"}
+            onChange={(e) => this.updateZipcode(e.target.value)}
+            value={this.state.zipcode}
+          ></input>
+          <div>
+            <button className="btn" type="submit">
+              Go
+            </button>
+          </div>
         </form>
-      </div>
+      </section>
     );
   }
 }
