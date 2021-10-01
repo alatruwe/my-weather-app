@@ -1,4 +1,5 @@
 import { Component } from "react";
+import getIconSource from "../../../../services/get-icon-source";
 
 class WeatherCard extends Component {
   // use state to watch for click or not
@@ -64,11 +65,16 @@ class WeatherCard extends Component {
   };
 
   render() {
+    const id = this.props.icon;
+    const src = getIconSource.getSource(id);
     return (
       <div onClick={this.showDetails}>
-        <p>{this.props.icon}</p>
+        <img src={src} alt="weather icon" />
         <p>{this.props.description}</p>
-        <div>
+        <div className="weatherDetails">
+          <div className="weatherDetailsIcon">
+            <i className="fas fa-thermometer-half"></i>
+          </div>
           <p>{this.props.temp} F</p>
         </div>
         <div className="weatherDetails">
