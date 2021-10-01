@@ -1,0 +1,13 @@
+.weatherForecast {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.weatherDetails {
+  display: flex;
+  align-items: center;
+}
+
+.weatherDetailsIcon {
+  margin-right: 5%;
+}
