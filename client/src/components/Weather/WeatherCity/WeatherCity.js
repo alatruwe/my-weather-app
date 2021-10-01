@@ -13,8 +13,9 @@ class WeatherCity extends Component {
 
     return (
       <div>
-        <h1>{data.city.name}</h1>
+        <h1>Today in {data.city.name}</h1>
         <img src={src} alt="none" />
+        <p>{data.list[0].weather[0].description}</p>
         <p>{data.list[0].main.temp}</p>
       </div>
     );
