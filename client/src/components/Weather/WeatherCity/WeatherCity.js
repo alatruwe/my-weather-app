@@ -4,7 +4,9 @@ import getIconSource from "../../../services/get-icon-source";
 
 class WeatherCity extends Component {
   render() {
-    const src = getIconSource.getSource();
+    //get icon name
+    const id = data.list[0].weather[0].icon;
+    const src = getIconSource.getSource(id);
 
     return (
       <div>
