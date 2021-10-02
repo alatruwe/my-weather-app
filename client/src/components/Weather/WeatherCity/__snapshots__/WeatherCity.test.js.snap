@@ -1,20 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`WeatherCity renders the UI as expected 1`] = `
-<div>
+<div
+  className="wrapperCity"
+>
   <h1>
     Today in 
     Mountain View
   </h1>
-  <img
-    alt="none"
-    src="../../../assets/art_clear.png"
-  />
-  <p>
-    clear sky
-  </p>
-  <p>
-    74.66
-  </p>
+  <div
+    className="card"
+    onClick={[Function]}
+  >
+    <div
+      className="vertical-border"
+    />
+    <div
+      className="cardDetails"
+    >
+      <div>
+        <img
+          alt="weather icon"
+          src="../../../assets/art_clear.png"
+        />
+        <h2>
+          clear sky
+        </h2>
+      </div>
+      <div
+        className="weatherDetails"
+      >
+        <div
+          className="weatherDetailsIcon"
+        >
+          <i
+            className="fas fa-thermometer-half"
+          />
+          <p>
+            Temp
+          </p>
+        </div>
+        <p>
+          74.66
+           F
+        </p>
+      </div>
+      <div
+        className="weatherDetails"
+      >
+        <div
+          className="weatherDetailsIcon"
+        >
+          <i
+            className="fas fa-sun"
+          />
+          <p>
+            UV index
+          </p>
+        </div>
+        <p>
+          UV index
+        </p>
+      </div>
+      <div />
+    </div>
+  </div>
 </div>
 `;

@@ -1,6 +1,6 @@
 import { Component } from "react";
 import data from "../../../data.json";
-import WeatherCard from "../WeatherForecast/WeatherCard/WeatherCard";
+import WeatherCard from "../WeatherCard/WeatherCard";
 import getIconSource from "../../../services/get-icon-source";
 
 class WeatherCity extends Component {

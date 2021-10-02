@@ -1,5 +1,5 @@
 import { Component } from "react";
-import getIconSource from "../../../../services/get-icon-source";
+import getIconSource from "../../../services/get-icon-source";
 
 class WeatherCard extends Component {
   // use state to watch for click or not

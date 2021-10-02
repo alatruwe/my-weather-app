@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherCity renders the UI as expected 1`] = `
+<section
+  className="wrapperForm"
+>
+  <form
+    className="zipcodeForm"
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="zipcode"
+    >
+      Enter a zipcode
+    </label>
+     
+    <input
+      id="zipcode"
+      name="zipcode"
+      onChange={[Function]}
+      type="number"
+      value={0}
+    />
+    <div>
+      <button
+        className="btn"
+        type="submit"
+      >
+        Go
+      </button>
+    </div>
+  </form>
+</section>
+`;

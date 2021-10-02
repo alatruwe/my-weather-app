@@ -1,0 +1,264 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherCity renders the UI as expected 1`] = `
+<div
+  className="wrapperForecast"
+>
+  <ul
+    className="weatherForecast"
+  >
+    <li>
+      <h2>
+        Day 
+        2
+      </h2>
+      <div
+        className="card"
+        onClick={[Function]}
+      >
+        <div
+          className="vertical-border"
+        />
+        <div
+          className="cardDetails"
+        >
+          <div>
+            <img
+              alt="weather icon"
+              src="../../../assets/art_clear.png"
+            />
+            <h2>
+              clear sky
+            </h2>
+          </div>
+          <div
+            className="weatherDetails"
+          >
+            <div
+              className="weatherDetailsIcon"
+            >
+              <i
+                className="fas fa-thermometer-half"
+              />
+              <p>
+                Temp
+              </p>
+            </div>
+            <p>
+              83.5
+               F
+            </p>
+          </div>
+          <div
+            className="weatherDetails"
+          >
+            <div
+              className="weatherDetailsIcon"
+            >
+              <i
+                className="fas fa-sun"
+              />
+              <p>
+                UV index
+              </p>
+            </div>
+            <p>
+              UV index
+            </p>
+          </div>
+          <div />
+        </div>
+      </div>
+    </li>
+    <li>
+      <h2>
+        Day 
+        3
+      </h2>
+      <div
+        className="card"
+        onClick={[Function]}
+      >
+        <div
+          className="vertical-border"
+        />
+        <div
+          className="cardDetails"
+        >
+          <div>
+            <img
+              alt="weather icon"
+              src="../../../assets/art_clouds.png"
+            />
+            <h2>
+              scattered clouds
+            </h2>
+          </div>
+          <div
+            className="weatherDetails"
+          >
+            <div
+              className="weatherDetailsIcon"
+            >
+              <i
+                className="fas fa-thermometer-half"
+              />
+              <p>
+                Temp
+              </p>
+            </div>
+            <p>
+              84.94
+               F
+            </p>
+          </div>
+          <div
+            className="weatherDetails"
+          >
+            <div
+              className="weatherDetailsIcon"
+            >
+              <i
+                className="fas fa-sun"
+              />
+              <p>
+                UV index
+              </p>
+            </div>
+            <p>
+              UV index
+            </p>
+          </div>
+          <div />
+        </div>
+      </div>
+    </li>
+    <li>
+      <h2>
+        Day 
+        4
+      </h2>
+      <div
+        className="card"
+        onClick={[Function]}
+      >
+        <div
+          className="vertical-border"
+        />
+        <div
+          className="cardDetails"
+        >
+          <div>
+            <img
+              alt="weather icon"
+              src="../../../assets/art_clear.png"
+            />
+            <h2>
+              clear sky
+            </h2>
+          </div>
+          <div
+            className="weatherDetails"
+          >
+            <div
+              className="weatherDetailsIcon"
+            >
+              <i
+                className="fas fa-thermometer-half"
+              />
+              <p>
+                Temp
+              </p>
+            </div>
+            <p>
+              85.08
+               F
+            </p>
+          </div>
+          <div
+            className="weatherDetails"
+          >
+            <div
+              className="weatherDetailsIcon"
+            >
+              <i
+                className="fas fa-sun"
+              />
+              <p>
+                UV index
+              </p>
+            </div>
+            <p>
+              UV index
+            </p>
+          </div>
+          <div />
+        </div>
+      </div>
+    </li>
+    <li>
+      <h2>
+        Day 
+        5
+      </h2>
+      <div
+        className="card"
+        onClick={[Function]}
+      >
+        <div
+          className="vertical-border"
+        />
+        <div
+          className="cardDetails"
+        >
+          <div>
+            <img
+              alt="weather icon"
+              src="../../../assets/art_clear.png"
+            />
+            <h2>
+              clear sky
+            </h2>
+          </div>
+          <div
+            className="weatherDetails"
+          >
+            <div
+              className="weatherDetailsIcon"
+            >
+              <i
+                className="fas fa-thermometer-half"
+              />
+              <p>
+                Temp
+              </p>
+            </div>
+            <p>
+              89.22
+               F
+            </p>
+          </div>
+          <div
+            className="weatherDetails"
+          >
+            <div
+              className="weatherDetailsIcon"
+            >
+              <i
+                className="fas fa-sun"
+              />
+              <p>
+                UV index
+              </p>
+            </div>
+            <p>
+              UV index
+            </p>
+          </div>
+          <div />
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
