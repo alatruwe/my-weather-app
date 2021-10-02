@@ -17,7 +17,8 @@ app.use(express.static(path.resolve(__dirname, "../client/build")));
 // Handle GET requests to /api route
 app.get("/api", (req, res) => {
   // get forecast data
-  let data = openweathermapAPI.getForecast5("12345").then((res) => {
+  const zipcode = req.query.zipcode;
+  let data = openweathermapAPI.getForecast5(zipcode).then((res) => {
     return res;
   });
 
@@ -26,7 +27,7 @@ app.get("/api", (req, res) => {
   // built response and send it back
   Promise.all([data]).then((data) => {
     //console.log(data);
-    res.status(201).send(data);
+    res.status(200).send(data);
   });
 });
 
