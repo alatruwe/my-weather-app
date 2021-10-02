@@ -37,6 +37,10 @@ i {
   font-size: 2em;
 }
 
+.error {
+  color: #e4002b;
+}
+
 /* Desktop view */
 @media screen and (min-width: 1025px) {
   .wrapperForm {
