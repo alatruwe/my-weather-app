@@ -1,17 +1,27 @@
 import React, { Component } from "react";
+import ValidationError from "../ValidationError";
 import "./ZipcodeForm.css";
 class ZipcodeForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       zipcode: 0,
+      touched: false,
       error: null,
     };
   }
 
   updateZipcode = (number) => {
-    this.setState({ zipcode: number });
+    this.setState({ zipcode: number, touched: true });
   };
+
+  validateZipcode() {
+    const zipcode = this.state.zipcode;
+    const zipcodeString = zipcode.toString();
+    if (zipcodeString.length < 5 || zipcodeString.length > 5) {
+      return "Please enter a valid zipcode";
+    }
+  }
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -24,6 +34,8 @@ class ZipcodeForm extends Component {
   };
 
   render() {
+    const error = this.validateZipcode();
+
     return (
       <section className="wrapperForm">
         <form
@@ -40,6 +52,7 @@ class ZipcodeForm extends Component {
             onChange={(e) => this.updateZipcode(e.target.value)}
             value={this.state.zipcode}
           ></input>
+          {this.state.touched && <ValidationError message={error} />}
           <div>
             <button className="btn" type="submit">
               Go
