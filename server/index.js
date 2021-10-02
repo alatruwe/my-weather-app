@@ -1,6 +1,8 @@
 const express = require("express");
+require("dotenv").config();
 const path = require("path");
 const morgan = require("morgan");
+const openweathermapAPI = require("./services/openWeatherMapAPI");
 
 const PORT = process.env.PORT || 3001;
 
@@ -14,12 +16,18 @@ app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 // Handle GET requests to /api route
 app.get("/api", (req, res) => {
-  res.json({ message: "Hello from server!" });
-});
+  // get forecast data
+  let data = openweathermapAPI.getForecast5("12345").then((res) => {
+    return res;
+  });
 
-// All other GET requests not handled before will return our React app
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+  // get uv data
+
+  // built response and send it back
+  Promise.all([data]).then((data) => {
+    //console.log(data);
+    res.status(201).send(data);
+  });
 });
 
 app.listen(PORT, () => {
