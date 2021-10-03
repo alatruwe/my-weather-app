@@ -15,6 +15,4 @@ app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 app.use("/api", homeRouter);
 
-app.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}`);
-});
+module.exports = app;
