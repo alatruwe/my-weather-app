@@ -5,8 +5,17 @@ const coords = require("../services/get-zipcode-coords");
 const homeRouter = express.Router();
 
 homeRouter.route("/").get((req, res) => {
-  // get forecast data
+  // get value from query
   const zipcode = req.query.zipcode;
+
+  // check if zipcode is valid
+  if (!coords.zipcodeExists(zipcode)) {
+    return res.status(404).json({
+      error: { message: `Zipcode doesn't exist` },
+    });
+  }
+
+  // get forecast data
   let dataForecast = openWeatherMapAPI.getForecast5(zipcode).then((res) => {
     return res;
   });
