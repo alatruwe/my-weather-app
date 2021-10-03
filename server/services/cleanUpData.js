@@ -33,6 +33,17 @@ const cleanUpData = {
 
     return array2;
   },
+
+  cleanOneCall(response) {
+    let array = [];
+    // loop through response to get daily UV index
+    response.data.daily.forEach(function (el) {
+      array.push(el.uvi);
+    });
+    // get only 5 days
+    array.splice(-3);
+    return array;
+  },
 };
 
 module.exports = cleanUpData;
