@@ -11,7 +11,7 @@ homeRouter.route("/").get((req, res) => {
   // check if zipcode is valid
   if (!coords.zipcodeExists(zipcode)) {
     return res.status(404).json({
-      error: { message: `Zipcode doesn't exist` },
+      error: `Zipcode doesn't exist`,
     });
   }
 
