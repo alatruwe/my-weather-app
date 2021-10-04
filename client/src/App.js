@@ -3,6 +3,7 @@ import ApiContext from "./ApiContext";
 import NavBar from "./components/NavBar/NavBar";
 import ZipcodeForm from "./components/ZipcodeForm/ZipcodeForm";
 import Weather from "./components/Weather/Weather";
+import buildQuery from "./services/API-query-builder";
 import "./App.css";
 
 class App extends Component {
@@ -17,7 +18,13 @@ class App extends Component {
     console.log("zipcode here");
     console.log(zipcode);
 
-    return fetch(`http://localhost:3001/api?zipcode=${zipcode}`)
+    const params = {
+      zipcode: zipcode,
+    };
+
+    const queryString = buildQuery.query(params);
+
+    return fetch(`/api?` + queryString)
       .then((res) => {
         return res.json();
       })
