@@ -21,15 +21,16 @@ const cleanUpData = {
     // create array to store cleaned up response
     let array2 = [];
 
+    // add city info to array
+    // in 1st place, used for data display in client
+    array2.push(response.data.city);
+
     // loop through response and push into it the 4 days I want
     response.data.list.forEach(function (el) {
       if (array.includes(el.dt)) {
         array2.push(el);
       }
     });
-
-    // add city info to array
-    array2.push(response.data.city);
 
     return array2;
   },
