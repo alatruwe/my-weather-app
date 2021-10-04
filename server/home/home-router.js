@@ -5,12 +5,12 @@ const coords = require("../services/get-zipcode-coords");
 const homeRouter = express.Router();
 
 homeRouter.route("/").get((req, res) => {
-  // get value from query
+  // get zipcode value from query
   const zipcode = req.query.zipcode;
 
   // check if zipcode is valid
   if (!coords.zipcodeExists(zipcode)) {
-    return res.status(404).json({
+    return res.status(400).json({
       error: `Zipcode doesn't exist`,
     });
   }

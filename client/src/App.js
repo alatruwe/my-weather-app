@@ -3,6 +3,7 @@ import ApiContext from "./ApiContext";
 import NavBar from "./components/NavBar/NavBar";
 import ZipcodeForm from "./components/ZipcodeForm/ZipcodeForm";
 import Weather from "./components/Weather/Weather";
+import ValidationError from "./components/ValidationError";
 import buildQuery from "./services/API-query-builder";
 import "./App.css";
 
@@ -11,12 +12,14 @@ class App extends Component {
     super(props);
     this.state = {
       results: false,
+      error: null,
     };
   }
 
+  // API call
   getAPIData = (zipcode) => {
-    console.log("zipcode here");
-    console.log(zipcode);
+    // reset error display if needed
+    this.setState({ error: null });
 
     const params = {
       zipcode: zipcode,
@@ -26,13 +29,18 @@ class App extends Component {
 
     return fetch(`/api?` + queryString)
       .then((res) => {
-        return res.json();
+        if (res.ok) {
+          return res.json().then((res) => {
+            this.setState({ weather: res[0] });
+            this.setState({ uvi: res[1] });
+            this.setState({ results: true });
+          });
+        }
+        return res.json().then((res) => {
+          this.setState({ error: res.error });
+        });
       })
-      .then((res) => {
-        this.setState({ weather: res[0] });
-        this.setState({ uvi: res[1] });
-        this.setState({ results: true });
-      })
+
       .catch((error) => console.log(error));
   };
 
@@ -45,11 +53,13 @@ class App extends Component {
       weather: this.state.weather,
       uvi: this.state.uvi,
     };
+    const error = this.state.error;
     return (
       <ApiContext.Provider value={value}>
         <div className="App">
           <NavBar />
           <ZipcodeForm getAPIData={this.getAPIData} />
+          {this.state.error ? <ValidationError message={error} /> : null}
           {this.state.results ? this.renderWeather() : null}
         </div>
       </ApiContext.Provider>
