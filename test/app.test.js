@@ -14,10 +14,10 @@ describe("App", () => {
       });
   });
 
-  it("GET / responds with 404 if zipcode does not exists", () => {
+  it("GET / responds with 400 if zipcode does not exists", () => {
     return supertest(app)
       .get("/api")
       .query({ zipcode: 12345 })
-      .expect(404, { error: `Zipcode doesn't exist` });
+      .expect(400, { error: `Zipcode doesn't exist` });
   });
 });
