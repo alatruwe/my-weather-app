@@ -1,4 +1,3 @@
-import data from "../data.json";
 import icons from "../weather-codes-icon-map.json";
 
 const getIconSource = {
