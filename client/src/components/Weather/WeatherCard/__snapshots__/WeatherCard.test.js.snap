@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WeatherCity renders the UI as expected 1`] = `
+exports[`WeatherCard renders the UI as expected 1`] = `
 <div
   className="card"
   onClick={[Function]}
@@ -48,9 +48,7 @@ exports[`WeatherCity renders the UI as expected 1`] = `
           UV index
         </p>
       </div>
-      <p>
-        UV index
-      </p>
+      <p />
     </div>
     <div />
   </div>

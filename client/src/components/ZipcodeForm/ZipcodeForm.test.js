@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import ZipcodeForm from "./ZipcodeForm";
 import renderer from "react-test-renderer";
 
-describe("WeatherCity", () => {
+describe("ZipcodeForm", () => {
   it("renders without crashing", () => {
     const div = document.createElement("div");
     ReactDOM.render(<ZipcodeForm />, div);

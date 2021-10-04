@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WeatherCity renders the UI as expected 1`] = `
+exports[`ZipcodeForm renders the UI as expected 1`] = `
 <section
   className="wrapperForm"
 >
@@ -24,6 +24,7 @@ exports[`WeatherCity renders the UI as expected 1`] = `
     <div>
       <button
         className="btn"
+        disabled="Please enter a valid zipcode"
         type="submit"
       >
         Go

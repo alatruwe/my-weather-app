@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import WeatherForecast from "./WeatherForecast";
 import renderer from "react-test-renderer";
 
-describe("WeatherCity", () => {
+describe("WeatherForecast", () => {
   it("renders without crashing", () => {
     const div = document.createElement("div");
     ReactDOM.render(<WeatherForecast />, div);
