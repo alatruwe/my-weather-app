@@ -32,7 +32,6 @@ homeRouter.route("/").get((req, res) => {
 
   // built response and send it back
   Promise.all([dataForecast, dataUV]).then((data) => {
-    //console.log(data);
     let finalData = [];
     finalData.push(res[0]);
     finalData.push(res[1]);

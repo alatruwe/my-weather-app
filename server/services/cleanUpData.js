@@ -1,7 +1,7 @@
 const cleanUpData = {
-  // only keep data for 5 days
+  // take full array of data and return only the 1 data point per day
   cleanForecast(response) {
-    // day in unix time
+    // 1 day in unix time
     const day = 86400;
 
     // get 1st day unix time from response
@@ -25,7 +25,7 @@ const cleanUpData = {
     // in 1st place, used for data display in client
     array2.push(response.data.city);
 
-    // loop through response and push into it the 4 days I want
+    // loop through response and push into it the 4 days we need
     response.data.list.forEach(function (el) {
       if (array.includes(el.dt)) {
         array2.push(el);
@@ -35,6 +35,7 @@ const cleanUpData = {
     return array2;
   },
 
+  // take full array of data, return UV index of the first 5 days
   cleanOneCall(response) {
     let array = [];
     // loop through response to get daily UV index

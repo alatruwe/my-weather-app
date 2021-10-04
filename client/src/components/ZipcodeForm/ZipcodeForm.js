@@ -15,14 +15,17 @@ class ZipcodeForm extends Component {
     this.setState({ zipcode: number, touched: true });
   };
 
+  // form validation
+  // input is not 5 char long
   validateZipcode() {
     const zipcode = this.state.zipcode;
     const zipcodeString = zipcode.toString();
-    if (zipcodeString.length < 5 || zipcodeString.length > 5) {
+    if (zipcodeString.length !== 5) {
       return "Please enter a valid zipcode";
     }
   }
 
+  // submit input to API call
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.getAPIData(this.state.zipcode);

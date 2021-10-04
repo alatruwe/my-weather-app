@@ -11,6 +11,7 @@ class WeatherForecast extends Component {
     return (
       <div className="wrapperForecast">
         <ul className="weatherForecast">
+          {/* render all data minus 1st object (city details) and 2nd object (today's details already rendered in weatherCity) */}
           {weather.slice(2).map((data, index) => (
             <li key={data.dt}>
               <h2>Day {index + 2}</h2>

@@ -3,7 +3,7 @@ const axios = require("axios");
 const cleanUpData = require("./cleanUpData");
 
 const openWeatherMapAPI = {
-  // funtion to build string query with params
+  // function to build string query with params
   buildQueryParams(params) {
     const queryItems = Object.keys(params).map(
       (key) => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`
@@ -36,10 +36,6 @@ const openWeatherMapAPI = {
 
     return data()
       .then((response) => {
-        //console.log("data here");
-        // console.log(response.status);
-        //console.log(response.data);
-
         // clean up data
         return cleanUpData.cleanForecast(response);
       })
@@ -74,10 +70,6 @@ const openWeatherMapAPI = {
 
     return data()
       .then((response) => {
-        //console.log("data here");
-        // console.log(response.status);
-        //console.log(response.data);
-
         return cleanUpData.cleanOneCall(response);
       })
       .catch((error) => {

@@ -29,6 +29,7 @@ class App extends Component {
 
     return fetch(`/api?` + queryString)
       .then((res) => {
+        // response ok, set results in State
         if (res.ok) {
           return res.json().then((res) => {
             this.setState({ weather: res[0] });
@@ -36,6 +37,7 @@ class App extends Component {
             this.setState({ results: true });
           });
         }
+        // if response not ok, save error
         return res.json().then((res) => {
           this.setState({ error: res.error });
         });
