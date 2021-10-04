@@ -87,7 +87,7 @@ class WeatherCard extends Component {
               <i className="fas fa-sun"></i>
               <p>UV index</p>
             </div>
-            <p>UV index</p>
+            <p>{this.props.uvi}</p>
           </div>
 
           <div>{this.state.showDetails ? this.renderDetails() : <></>}</div>

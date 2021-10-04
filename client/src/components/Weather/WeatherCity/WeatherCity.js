@@ -1,27 +1,27 @@
 import { Component } from "react";
-import data from "../../../data.json";
 import WeatherCard from "../WeatherCard/WeatherCard";
-import getIconSource from "../../../services/get-icon-source";
+import ApiContext from "../../../ApiContext";
 
 class WeatherCity extends Component {
+  static contextType = ApiContext;
+
   render() {
-    //get icon name
-    const id = data.list[0].weather[0].icon;
-    const src = getIconSource.getSource(id);
+    const { weather, uvi } = this.context;
 
     return (
       <div className="wrapperCity">
-        <h1>Today in {data.city.name}</h1>
+        <h1>Today in {weather[0].name}</h1>
 
         <WeatherCard
-          icon={data.list[0].weather[0].icon}
-          description={data.list[0].weather[0].description}
-          temp={data.list[0].main.temp}
-          min={data.list[0].main.temp_min}
-          max={data.list[0].main.temp_max}
-          feelsLike={data.list[0].main.feels_like}
-          humidity={data.list[0].main.humidity}
-          wind={data.list[0].wind.speed}
+          icon={weather[1].weather[0].icon}
+          description={weather[1].weather[0].description}
+          temp={weather[1].main.temp}
+          min={weather[1].main.temp_min}
+          max={weather[1].main.temp_max}
+          feelsLike={weather[1].main.feels_like}
+          humidity={weather[1].main.humidity}
+          wind={weather[1].wind.speed}
+          uvi={uvi[0]}
         />
       </div>
     );

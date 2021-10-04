@@ -25,12 +25,7 @@ class ZipcodeForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const data = {
-      zipcode: this.state.zipcode,
-    };
-
-    console.log(data);
-    this.props.hasResults();
+    this.props.getAPIData(this.state.zipcode);
   };
 
   render() {
@@ -54,7 +49,11 @@ class ZipcodeForm extends Component {
           ></input>
           {this.state.touched && <ValidationError message={error} />}
           <div>
-            <button className="btn" type="submit">
+            <button
+              className="btn"
+              type="submit"
+              disabled={this.validateZipcode()}
+            >
               Go
             </button>
           </div>
