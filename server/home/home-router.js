@@ -36,7 +36,7 @@ homeRouter.route("/").get((req, res) => {
     let finalData = [];
     finalData.push(res[0]);
     finalData.push(res[1]);
-    res.status(200).send(data);
+    res.status(200).json(data);
   });
 });
 
