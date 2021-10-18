@@ -5,7 +5,7 @@ class ZipcodeForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      zipcode: 0,
+      zipcode: "",
       touched: false,
       error: null,
     };
@@ -19,8 +19,7 @@ class ZipcodeForm extends Component {
   // input is not 5 char long
   validateZipcode() {
     const zipcode = this.state.zipcode;
-    const zipcodeString = zipcode.toString();
-    if (zipcodeString.length !== 5) {
+    if (zipcode.length !== 5) {
       return "Please enter a valid zipcode";
     }
   }
@@ -29,6 +28,7 @@ class ZipcodeForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.getAPIData(this.state.zipcode);
+    this.setState({ zipcode: "", touched: false });
   };
 
   render() {
@@ -44,7 +44,7 @@ class ZipcodeForm extends Component {
         >
           <label htmlFor="zipcode">Enter a zipcode</label>{" "}
           <input
-            type={"number"}
+            type={"text"}
             id={"zipcode"}
             name={"zipcode"}
             onChange={(e) => this.updateZipcode(e.target.value)}
